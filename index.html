@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#070910"><title>DJ WALTER Academy PRO V2</title>
+<style>
+:root{--bg:#070910;--p:#101521;--p2:#151c2a;--line:#2a354d;--txt:#f6f8fc;--mut:#9da8ba;--cyan:#00e5ff;--vio:#8b5cf6;--green:#35e07f;--red:#ff5577;--gold:#ffd166}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(900px 500px at 50% -120px,#263057,#070910 55%);color:var(--txt);font-family:system-ui,-apple-system,Segoe UI,sans-serif}.app{max-width:1150px;margin:auto;padding:0 15px 50px}
+header{height:82px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:950;letter-spacing:2px;font-size:24px}.brand b{color:var(--cyan)}.brand small{display:block;color:var(--mut);font-size:9px;letter-spacing:3px}
+.xp{border:1px solid var(--line);border-radius:99px;padding:8px 13px;color:var(--mut);font-size:12px}.xp b{color:var(--gold)}
+.hero,.box{border:1px solid var(--line);border-radius:25px;background:rgba(16,21,33,.94);box-shadow:0 20px 70px #0006}.hero{padding:25px}.hero h1{font-size:clamp(30px,6vw,52px);margin:0}.hero h1 span{color:var(--cyan)}.hero p{color:#c1c9d7;line-height:1.6;max-width:750px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.stat{background:#0b1019;border:1px solid var(--line);padding:13px;border-radius:15px}.stat b{display:block;font-size:22px}.stat span{font-size:11px;color:var(--mut)}
+nav{display:flex;gap:8px;overflow:auto;padding:14px 0}nav button,.btn{border:1px solid var(--line);background:#111827;color:#dbe1ec;padding:11px 15px;border-radius:12px;cursor:pointer;font-weight:800;white-space:nowrap}nav button.active{border-color:var(--cyan);background:#10232c;color:white}
+.section{display:none}.section.active{display:block}.title{margin:10px 0 15px}.title h2{margin:0}.title p{color:var(--mut);margin:5px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px}.card{background:var(--p);border:1px solid var(--line);border-radius:19px;padding:17px;cursor:pointer}.card:hover{border-color:#607095;transform:translateY(-2px)}.card.done{border-color:#27794f}.icon{font-size:28px}.card h3{margin:10px 0 5px}.card p{color:var(--mut);font-size:14px;line-height:1.5}.pill{font-size:10px;background:#20283a;padding:5px 8px;border-radius:99px}.done .pill{color:#75f3a8;background:#123725}
+.box{padding:20px}.mix{display:grid;grid-template-columns:1fr 90px 1fr;gap:12px;align-items:stretch}.deck{background:#0b1018;border:1px solid #303b54;border-radius:19px;padding:16px}.deck h3{margin:0}.bpm{font-size:35px;font-weight:950;margin:7px 0}.bpm small{font-size:11px;color:var(--mut)}input[type=range]{width:100%;accent-color:var(--cyan)}.wave{height:62px;border-radius:10px;margin:12px 0;background:repeating-linear-gradient(90deg,#152235 0 4px,#0c121b 4px 9px);position:relative}.wave:after{content:"";position:absolute;top:50%;left:0;right:0;height:2px;background:#00e5ff55;box-shadow:0 -12px #8b5cf655,0 12px #8b5cf655}.jog{width:90px;height:90px;border-radius:50%;margin:14px auto;background:radial-gradient(circle,#252d40 0 18%,#0a0e15 19% 55%,#242c3e 56% 60%,#0a0e15 61%);border:1px solid #3a465f;display:grid;place-items:center}.jog span{font-size:11px;color:var(--mut)}.center{display:flex;flex-direction:column;justify-content:center;gap:10px}.center button{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);background:#171e2c;color:white;font-weight:900;cursor:pointer}.center .play{background:linear-gradient(90deg,var(--cyan),#63caff);color:#061015;border:0}.fader{margin-top:15px}.label{display:flex;justify-content:space-between;color:var(--mut);font-size:11px}.meter{height:7px;background:#20283a;border-radius:10px;overflow:hidden;margin:10px 0}.meter i{display:block;height:100%;width:50%;background:linear-gradient(90deg,var(--green),var(--gold),var(--red))}.mission{margin-top:15px;border-left:4px solid var(--cyan);background:#0c1b25;padding:13px;border-radius:8px;color:#c8d1df;line-height:1.5}
+.lesson{line-height:1.7;color:#c8cfdb}.lesson h2{color:white}.lesson .tip{background:#0c1b25;border-left:4px solid var(--cyan);padding:12px;border-radius:7px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.primary{background:linear-gradient(90deg,var(--cyan),#67ccff);color:#041015;border:0}.green{background:#17472f;color:#7af5aa}.quiz{margin-top:15px}.answer{display:block;width:100%;text-align:left;margin:8px 0;padding:13px;border:1px solid var(--line);border-radius:11px;background:#1a2130;color:white;cursor:pointer}.answer.correct{border-color:var(--green);background:#123524}.answer.wrong{border-color:var(--red);background:#351522}
+footer{text-align:center;color:#667187;font-size:11px;margin-top:35px}@media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}.mix{grid-template-columns:1fr}.center{flex-direction:row;flex-wrap:wrap}.center button{width:calc(50% - 5px)}.jog{margin:10px auto}}
+</style>
+</head>
+<body><div class="app">
+<header><div class="brand">DJ <b>WALTER</b><small>ACADEMY PRO V2</small></div><div class="xp">LEVEL <b id="level">1</b> · <b id="xp">0</b> XP</div></header>
+<section class="hero"><h1>Learn. Mix. <span>Master.</span></h1><p>Interaktive DJ-Ausbildung direkt im Browser – jetzt mit echtem Audio-Beat aus der Web Audio API. Keine Musikdateien und kein Server nötig.</p>
+<div class="stats"><div class="stat"><b id="done">0/12</b><span>LEKTIONEN</span></div><div class="stat"><b id="qscore">0%</b><span>QUIZ-SCORE</span></div><div class="stat"><b id="sessions">0</b><span>TRAININGS</span></div><div class="stat"><b>PRO</b><span>BROWSER EDITION</span></div></div></section>
+<nav><button class="active" onclick="tab('learn',this)">🎓 Lernen</button><button onclick="tab('mixer',this)">🎛️ Audio Mixer</button><button onclick="tab('quiz',this)">🧠 Quiz</button></nav>
+
+<section id="learn" class="section active"><div class="title"><h2>DJ-Lernpfad</h2><p>Vom ersten Beat bis zur Live-Performance.</p></div><div class="grid" id="cards"></div><div id="lessonBox" class="box" style="display:none;margin-top:15px"><div id="lesson"></div></div></section>
+
+<section id="mixer" class="section"><div class="title"><h2>🎛️ Browser DJ Trainer</h2><p>Ein echtes, kleines Beat-Training. Tippe auf Start und höre den Beat.</p></div>
+<div class="box"><div class="mix">
+<div class="deck"><h3>DECK A</h3><div class="bpm" id="aVal">124 <small>BPM</small></div><input id="aBpm" type="range" min="90" max="160" value="124" oninput="changeBpm('A',this.value)"><div class="wave"></div><div class="jog"><span>A</span></div></div>
+<div class="center"><button class="play" onclick="toggleAudio()" id="play">▶ START</button><button onclick="tapTempo()">🥁 TAP</button><button onclick="sync()">SYNC</button></div>
+<div class="deck"><h3>DECK B</h3><div class="bpm" id="bVal">128 <small>BPM</small></div><input id="bBpm" type="range" min="90" max="160" value="128" oninput="changeBpm('B',this.value)"><div class="wave"></div><div class="jog"><span>B</span></div></div>
+</div>
+<div class="fader"><div class="label"><span>DECK A</span><span>CROSSFADER</span><span>DECK B</span></div><input id="cross" type="range" min="0" max="100" value="50" oninput="cross(this.value)"><div class="meter"><i id="meter"></i></div></div>
+<div class="mission" id="mission">🎯 <b>Übung:</b> Starte den Beat, stelle beide Decks auf dasselbe BPM und setze den Crossfader langsam von A nach B.</div>
+<div class="actions"><button class="btn primary" onclick="sync()">⚡ BPM angleichen + 5 XP</button><button class="btn" onclick="newTracks()">🎲 Neue Tracks</button><button class="btn" onclick="resetAudio()">■ Stop</button></div></div></section>
+
+<section id="quiz" class="section"><div class="title"><h2>🧠 DJ Wissenstest</h2><p>10 Fragen. Jede richtige Antwort gibt 10 XP.</p></div><div id="quizBox" class="box"></div></section>
+<footer>DJ WALTER Academy PRO V2 · Fortschritt wird lokal im Browser gespeichert.</footer></div>
+
+<script>
+const L=[
+["🎧","DJ Basics","Equipment, Signalweg und DJ-Begriffe.","Ein DJ verbindet Musikquellen musikalisch. Lerne zuerst Decks, Mixer, Kopfhörer und Master-Ausgang kennen.","Beginner"],
+["🎚️","Mixer verstehen","Gain, Kanal-Fader, Cue und Crossfader.","Der Mixer ist die Schaltzentrale. Gain kontrolliert den Eingangspegel, Channel-Fader die Kanal-Lautstärke und Cue ermöglicht Vorhören.","Beginner"],
+["🥁","BPM & Beatmatching","Tempo und Rhythmus zusammenbringen.","BPM bedeutet Beats Per Minute. Beim Beatmatching werden Tempo und rhythmische Position zweier Tracks angepasst.","Beginner"],
+["🎯","Beatgrid & Phrase","Musikalische Struktur verstehen.","Ein Beatgrid hilft bei der rhythmischen Orientierung. Phrasen sind musikalische Abschnitte, die für saubere Übergänge wichtig sind.","Beginner"],
+["🔊","Gain Staging","Saubere Pegel statt Verzerrung.","Gain sollte so eingestellt werden, dass das Signal sauber bleibt und noch Reserve vorhanden ist.","Beginner"],
+["🎚️","Low / Mid / High","EQ gezielt einsetzen.","LOW enthält überwiegend tiefe Frequenzen, MID den mittleren Bereich und HIGH die hohen Frequenzen.","Beginner"],
+["🔄","Der erste Übergang","Einen Track sauber einblenden.","Track vorbereiten, Tempo angleichen, Cue setzen, musikalischen Einstieg wählen und Lautstärke/EQ kontrolliert verändern.","Intermediate"],
+["🔥","Break & Drop","Energie und Spannung erkennen.","Breaks, Builds und Drops helfen dir, die Dramaturgie eines Sets zu verstehen und Übergänge passend zu setzen.","Intermediate"],
+["🌊","Filter & FX","Effekte musikalisch verwenden.","Filter und Effekte können Übergänge unterstützen. Weniger ist oft mehr – der Track bleibt das Zentrum.","Intermediate"],
+["🎼","Harmonic Mixing","Tonarten berücksichtigen.","Harmonic Mixing berücksichtigt Tonarten, damit Tracks harmonischer kombiniert werden können.","Intermediate"],
+["🧠","DJ-Set planen","Energie und Track-Auswahl.","Ein Set braucht eine musikalische Dramaturgie. Plane Energie und Richtung, aber lasse Raum für das Publikum.","Advanced"],
+["🏆","Live Performance","Sicher und ruhig spielen.","Live zählt Kontrolle. Vorbereitung, Cueing und die Fähigkeit, kleine Fehler ruhig zu korrigieren, sind entscheidend.","Advanced"]
+];
+let S=JSON.parse(localStorage.getItem("djaw_v2")||'{"done":[],"xp":0,"qa":0,"qc":0,"sessions":0}');
+function save(){localStorage.setItem("djaw_v2",JSON.stringify(S));stats();cards()}
+function stats(){document.getElementById("done").textContent=S.done.length+"/12";document.getElementById("xp").textContent=S.xp;document.getElementById("level").textContent=Math.max(1,Math.floor(S.xp/100)+1);document.getElementById("qscore").textContent=(S.qa?Math.round(S.qc/S.qa*100):0)+"%";document.getElementById("sessions").textContent=S.sessions}
+function cards(){document.getElementById("cards").innerHTML=L.map((x,i)=>`<div class="card ${S.done.includes(i)?"done":""}" onclick="openLesson(${i})"><div class="icon">${x[0]}</div><span class="pill">${S.done.includes(i)?"✓ FERTIG":x[4]}</span><h3>${x[1]}</h3><p>${x[2]}</p></div>`).join("")}
+function tab(id,b){document.querySelectorAll(".section").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");document.querySelectorAll("nav button").forEach(x=>x.classList.remove("active"));b.classList.add("active");if(id==="quiz")quiz();scrollTo(0,0)}
+function openLesson(i){let x=L[i];document.getElementById("lessonBox").style.display="block";document.getElementById("lesson").innerHTML=`<div class="lesson"><h2>${x[0]} ${x[1]}</h2><p>${x[3]}</p><div class="tip">💡 <b>Praxis:</b> Öffne den Audio Mixer und übe diese Technik direkt danach.</div><div class="actions"><button class="btn primary" onclick="complete(${i})">${S.done.includes(i)?"✓ Erledigt":"✓ Lektion abschließen +25 XP"}</button><button class="btn" onclick="openLesson(${(i+1)%12})">Nächste →</button></div></div>`;document.getElementById("lessonBox").scrollIntoView({behavior:"smooth"})}
+function complete(i){if(!S.done.includes(i)){S.done.push(i);S.xp+=25;save()}openLesson(i)}
+const Q=[
+["BPM bedeutet…","Beats Per Minute",["Beats Per Minute","Bass Power Mix","Beat Player Mode"]],
+["LOW am EQ betrifft hauptsächlich…","tiefe Frequenzen",["die Höhen","tiefe Frequenzen","nur die Stimme"]],
+["CUE nutzt du typischerweise zum…","Vorhören","Vorhören","Master lauter machen","Licht steuern"],
+["Beatmatching bedeutet…","Tracks rhythmisch angleichen",["Tracks schneiden","Tracks rhythmisch angleichen","Effekte hinzufügen"]],
+["Der Crossfader…","überblendet Kanäle",["ändert die Tonart","überblendet Kanäle","stellt BPM ein"]],
+["Gain hilft bei…","sauberen Pegeln",["sauberen Pegeln","mehr Bass automatisch","FX synchronisieren"]],
+["Ein Build-up erzeugt häufig…","Spannung",["Spannung","Stille","eine neue Tonart"]],
+["Ein Drop ist…","ein markanter Energie-Moment",["ein Kabel","ein markanter Energie-Moment","ein EQ-Band"]],
+["Harmonic Mixing berücksichtigt…","Tonarten",["nur BPM","Tonarten","nur Lautstärke"]],
+["Gute Live-Praxis bedeutet…","kontrolliert und musikalisch reagieren",["alles maximal laut","kontrolliert und musikalisch reagieren","immer alle Effekte nutzen"]]
+];
+let qi=0;
+function quiz(){qi=0;showQ()}
+function showQ(){if(qi>=Q.length){document.getElementById("quizBox").innerHTML=`<h2>🏆 Fertig!</h2><p>${S.qc} von ${S.qa} Antworten waren richtig.</p><button class="btn primary" onclick="quiz()">Nochmal</button>`;return}let q=Q[qi];let opts=Array.isArray(q[2])?q[2]:q.slice(2);document.getElementById("quizBox").innerHTML=`<small>FRAGE ${qi+1}/10</small><h3>${q[0]}</h3>${opts.map(o=>`<button class="answer" onclick="ans(this,${JSON.stringify(o)},${JSON.stringify(q[1])})">${o}</button>`).join("")}<div id="fb"></div>`}
+function ans(b,a,c){document.querySelectorAll(".answer").forEach(x=>x.disabled=true);S.qa++;let ok=a===c;if(ok){S.qc++;S.xp+=10;b.classList.add("correct")}else{b.classList.add("wrong");document.querySelectorAll(".answer").forEach(x=>{if(x.textContent===c)x.classList.add("correct")})}save();document.getElementById("fb").innerHTML=`<p>${ok?"✅ Richtig! +10 XP":"❌ Richtig wäre: "+c}</p>`;setTimeout(()=>{qi++;showQ()},800)}
+let ctx=null,timer=null,playing=false,lastTap=0,taps=[];
+function audio(){if(!ctx)ctx=new (window.AudioContext||window.webkitAudioContext)();if(ctx.state==="suspended")ctx.resume()}
+function kick(t){let o=ctx.createOscillator(),g=ctx.createGain();o.frequency.setValueAtTime(120,t);o.frequency.exponentialRampToValueAtTime(48,t+.09);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.7,t+.005);g.gain.exponentialRampToValueAtTime(.0001,t+.13);o.connect(g).connect(ctx.destination);o.start(t);o.stop(t+.14)}
+function hat(t){let o=ctx.createOscillator(),g=ctx.createGain();o.type="square";o.frequency.value=5000;g.gain.setValueAtTime(.035,t);g.gain.exponentialRampToValueAtTime(.0001,t+.025);o.connect(g).connect(ctx.destination);o.start(t);o.stop(t+.03)}
+function startBeat(){audio();let bpm=+document.getElementById("aBpm").value,beat=60/bpm,next=ctx.currentTime+.05;function tick(){if(!playing)return;while(next<ctx.currentTime+.2){kick(next);hat(next+beat/2);next+=beat}timer=setTimeout(tick,60)}tick()}
+function toggleAudio(){audio();playing=!playing;document.getElementById("play").textContent=playing?"■ STOP":"▶ START";if(playing){S.sessions++;save();startBeat()}else clearTimeout(timer)}
+function resetAudio(){playing=false;clearTimeout(timer);document.getElementById("play").textContent="▶ START"}
+function changeBpm(d,v){document.getElementById(d==="A"?"aVal":"bVal").innerHTML=v+" <small>BPM</small>";mission()}
+function sync(){let v=document.getElementById("aBpm").value;document.getElementById("bBpm").value=v;changeBpm("B",v);S.xp+=5;save();document.getElementById("mission").innerHTML="✅ <b>Tempo synchronisiert!</b> Jetzt Crossfader langsam von A nach B bewegen."}
+function newTracks(){let a=100+Math.floor(Math.random()*51),b=100+Math.floor(Math.random()*51);document.getElementById("aBpm").value=a;document.getElementById("bBpm").value=b;changeBpm("A",a);changeBpm("B",b);document.getElementById("mission").innerHTML="🎲 Neue Tracks: erst BPM angleichen, dann Übergang üben."}
+function cross(v){document.getElementById("meter").style.width=v+"%";document.getElementById("mission").innerHTML=v<45?"🎧 Deck A dominiert.":"🎧 Deck B übernimmt – höre auf einen sauberen Übergang.";if(v>=48&&v<=52)document.getElementById("mission").innerHTML="🎯 Mitte: beide Decks gleich stark."}
+function mission(){let a=+document.getElementById("aBpm").value,b=+document.getElementById("bBpm").value;document.getElementById("mission").innerHTML=Math.abs(a-b)<=1?"🔥 BPM fast perfekt synchron!":"🎯 Aufgabe: Beide Decks auf dasselbe BPM bringen."}
+function tapTempo(){let n=performance.now();if(lastTap&&n-lastTap>1500)taps=[];if(lastTap)taps.push(n-lastTap);lastTap=n;if(taps.length>=3){let avg=taps.slice(-5).reduce((a,b)=>a+b,0)/Math.min(5,taps.length),bpm=Math.round(60000/avg);bpm=Math.max(90,Math.min(160,bpm));document.getElementById("aBpm").value=bpm;changeBpm("A",bpm);document.getElementById("mission").textContent="🥁 Tap Tempo erkannt: "+bpm+" BPM"}}
+stats();cards();
+</script></body></html>
