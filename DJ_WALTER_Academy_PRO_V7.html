@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>DJ WALTER Academy – Professional Trainer V7</title>
+<style>
+:root{--bg:#070910;--panel:#111624;--panel2:#0c111d;--line:#273149;--text:#f5f7fb;--muted:#9aa5ba;--cyan:#00e5ff;--purple:#7c5cff;--green:#36e39a;--red:#ff5d78;--yellow:#ffd166}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 15% -10%,#20294a 0,#070910 43%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Arial,sans-serif}
+button,input,select{font:inherit}button{border:1px solid var(--line);background:#151c2d;color:var(--text);border-radius:13px;padding:11px 13px;font-weight:800}button:active{transform:scale(.98)}button.primary{background:linear-gradient(135deg,var(--cyan),#3388ff);color:#031019;border:0}
+.wrap{max-width:1180px;margin:auto;padding:12px}.hero,.panel{background:rgba(17,22,36,.95);border:1px solid var(--line);border-radius:22px;padding:16px;margin-bottom:14px;box-shadow:0 12px 35px #0005}
+.brand{color:var(--cyan);font-weight:900;letter-spacing:1.8px;font-size:13px}.hero h1{font-size:clamp(34px,8vw,62px);line-height:.95;margin:9px 0}.hero p{color:var(--muted);line-height:1.5;margin:0}.notice{margin-top:12px;padding:11px;border-radius:13px;background:#141c2c;color:var(--muted);font-size:13px}
+.nav{display:flex;gap:7px;overflow:auto;position:sticky;top:0;z-index:10;background:rgba(7,9,16,.93);padding:5px 0 10px}.nav button{white-space:nowrap}.nav .active{background:var(--cyan);color:#031019;border-color:var(--cyan)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}.stat{background:var(--panel);border:1px solid var(--line);border-radius:16px;text-align:center;padding:12px}.stat b{display:block;font-size:25px}.muted{color:var(--muted)}.small{font-size:12px}
+.decks{display:grid;grid-template-columns:1fr 1fr;gap:12px}.deck{background:var(--panel2);border:1px solid var(--line);border-radius:19px;padding:13px}.deck h2{margin:0 0 9px}.file{border:1px dashed #475473;border-radius:12px;padding:11px;text-align:center}.file input{width:100%;margin-top:7px}.track{font-weight:900;margin:10px 0 2px;min-height:21px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.status{color:var(--muted);font-size:12px;min-height:18px}.wave{width:100%;height:86px;display:block;background:#070a12;border:1px solid #202941;border-radius:12px;margin-top:8px}.transport{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}.transport button{font-size:17px}.play.running{background:#173c30;border-color:#2e8e67}.bpmBig{text-align:center;font-weight:900;font-size:25px;margin:6px 0}.controls4{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:8px}.control label{display:block;color:var(--muted);font-size:11px;margin-bottom:4px}.control input,.slider input{width:100%}.val{text-align:center;font-size:11px;font-weight:800;margin-top:2px}
+.eq{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:9px}.slider{margin-top:8px}.slider label{display:block;color:var(--muted);font-size:11px}.looprow{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}
+.jogs{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}.jogWrap{text-align:center}.jog{height:145px;aspect-ratio:1;border-radius:50%;margin:auto;border:2px solid #3d4966;background:radial-gradient(circle,#252e44 0 27%,#0a0e17 28% 43%,#1c2537 44% 65%,#080b13 66%);box-shadow:inset 0 0 0 5px #111827,0 8px 22px #0008;position:relative;touch-action:none;user-select:none}.jog:after{content:"";position:absolute;left:50%;top:50%;width:24px;height:24px;margin:-12px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px var(--cyan)}.jog .mark{position:absolute;left:50%;top:7px;width:4px;height:26px;margin-left:-2px;background:#fff;border-radius:3px}.jogHint{font-size:10px;color:var(--muted);margin-top:4px}.cuehold{width:100%;margin-top:7px;height:54px}
+.mixer{display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:12px;align-items:center}.fader input,.cross input{width:100%}.cross{text-align:center}.cross b{display:block;margin-bottom:4px}
+.fxgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.fx.on{background:#362b70;border-color:#9a84ff}.fxControls{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:9px}
+.progress{height:9px;background:#080b12;border:1px solid var(--line);border-radius:99px;overflow:hidden}.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--purple))}
+.lesson,.quiz{padding:12px;border:1px solid var(--line);border-radius:14px;background:var(--panel2);margin:8px 0}.lesson.done{border-color:#2b855f}.quiz label{display:block;padding:9px;border:1px solid var(--line);border-radius:10px;margin:5px 0}.hidden{display:none!important}
+@media(max-width:760px){.decks{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.mixer{grid-template-columns:1fr}.fxgrid{grid-template-columns:repeat(2,1fr)}.controls4{grid-template-columns:repeat(2,1fr)}.jog{height:132px}.hero,.panel{padding:13px}.wrap{padding:8px}}
+</style>
+
+<style id="v7-css">
+.timebar{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;margin-top:8px;background:#080c15;border:1px solid #202941;border-radius:12px;padding:8px}
+.timebar b{font-variant-numeric:tabular-nums}.timebar .remain{text-align:right}
+.beatgrid{height:8px;border-radius:99px;background:repeating-linear-gradient(90deg,#00e5ff 0 2px,transparent 2px 25px),#121a2a;opacity:.85;margin-top:7px}
+.hotcues{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}.hotcues button{padding:9px 4px;font-size:12px}
+.hotcues button.set{border-color:#00e5ff;background:#123044}.hotcues button.active{border-color:#ffd166;background:#4b3c12}
+.deckTop{display:flex;justify-content:space-between;gap:8px;align-items:center}.deckTop .deckBadge{font-size:11px;color:#00e5ff;border:1px solid #23445a;border-radius:999px;padding:4px 8px}
+.beatinfo{display:flex;justify-content:space-between;color:#9aa5ba;font-size:11px;margin-top:6px}
+.masterSection{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.lock.on{background:#263a27;border-color:#36e39a;color:#8dffc9}
+@media(max-width:760px){.masterSection{grid-template-columns:1fr}.hotcues button{font-size:11px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="hero">
+  <div class="brand">DJ WALTER ACADEMY • PROFESSIONAL DJ TRAINER V7</div>
+  <h1>Mit echter Musik üben.</h1>
+  <p>Zwei Browser-Decks für deine eigenen MP3/WAV/M4A-Dateien – Beatmatching, EQ, Pitch, Gain, Crossfader, Cue, Loops, Jog/Scratch und Effekte.</p>
+  <div class="notice">🔒 Deine Audiodateien werden nur im Browser verarbeitet und nicht von dieser Seite hochgeladen. Verwende nur Musik, die du rechtmäßig nutzen darfst.</div>
+</section>
+
+<nav class="nav">
+ <button class="active" data-tab="trainer">🎛️ DJ-Trainer</button>
+ <button data-tab="lessons">🎓 Lehrplan</button>
+ <button data-tab="hearing">👂 Gehörtraining</button>
+ <button data-tab="exam">🏆 Prüfung</button>
+</nav>
+
+<section class="stats">
+ <div class="stat"><b id="xp">0</b><span class="muted">XP</span></div>
+ <div class="stat"><b id="level">1</b><span class="muted">Level</span></div>
+ <div class="stat"><b id="done">0/18</b><span class="muted">Aufgaben</span></div>
+ <div class="stat"><b id="masterBpm">128</b><span class="muted">Master BPM</span></div>
+</section>
+
+<section id="trainer" class="tab">
+<div class="panel">
+ <h2>🎚️ DECKS</h2>
+ <div class="decks">
+  <div class="deck" data-deck="A">
+   <h2>DECK A</h2>
+   <div class="file"><b>Track laden</b><input class="fileInput" type="file" accept=".mp3,.wav,.m4a,audio/mpeg,audio/wav,audio/mp4,audio/x-m4a"></div>
+   <div class="track name">Kein Track geladen</div><div class="status">Bereit</div>
+   <canvas class="wave" height="86"></canvas>
+   <div class="timebar"><b class="elapsed">0:00</b><b class="positionPct">0%</b><b class="remain">-0:00</b></div>
+   <div class="beatgrid" title="Beatgrid"></div>
+   <div class="beatinfo"><span>Beatgrid</span><span class="beatNow">Beat 1</span></div>
+   <div class="hotcues" data-hot="A">
+    <button data-cue="0">CUE 1</button><button data-cue="1">CUE 2</button><button data-cue="2">CUE 3</button><button data-cue="3">CUE 4</button>
+   </div>
+   <div class="bpmBig bpmBigEl">128 BPM</div>
+   <div class="transport"><button class="play">▶ Play</button><button class="cue">⏮ Cue</button></div>
+   <div class="jogs"><div class="jogWrap"><div class="jog" data-jog="A"><div class="mark"></div></div><div class="jogHint">Drehen = Jog / Scratch</div></div><div><button class="cuehold" data-cuehold="A">🎧 CUE gedrückt halten</button></div></div>
+   <div class="controls4">
+    <div class="control"><label>BPM</label><input class="bpm" type="range" min="70" max="180" value="128"><div class="val bpmVal">128</div></div>
+    <div class="control"><label>Pitch %</label><input class="pitch" type="range" min="-10" max="10" step=".1" value="0"><div class="val pitchVal">0%</div></div>
+    <div class="control"><label>Gain</label><input class="gain" type="range" min="0" max="1.4" step=".01" value="1"><div class="val gainVal">100%</div></div>
+    <div class="control"><label>Volume</label><input class="volume" type="range" min="0" max="1" step=".01" value="1"><div class="val volumeVal">100%</div></div>
+   </div>
+   <div class="eq">
+    <div class="slider"><label>HIGH</label><input class="high" type="range" min="-12" max="12" value="0"><div class="val highVal">0 dB</div></div>
+    <div class="slider"><label>MID</label><input class="mid" type="range" min="-12" max="12" value="0"><div class="val midVal">0 dB</div></div>
+    <div class="slider"><label>LOW</label><input class="low" type="range" min="-12" max="12" value="0"><div class="val lowVal">0 dB</div></div>
+   </div>
+   <div class="looprow"><select class="loop"><option value="0">Loop AUS</option><option value="4">Loop 4 Beats</option><option value="8">Loop 8 Beats</option><option value="16">Loop 16 Beats</option></select><button class="loopSet">🔁 Loop setzen</button></div>
+  </div>
+
+  <div class="deck" data-deck="B">
+   <h2>DECK B</h2>
+   <div class="file"><b>Track laden</b><input class="fileInput" type="file" accept=".mp3,.wav,.m4a,audio/mpeg,audio/wav,audio/mp4,audio/x-m4a"></div>
+   <div class="track name">Kein Track geladen</div><div class="status">Bereit</div>
+   <canvas class="wave" height="86"></canvas>
+   <div class="timebar"><b class="elapsed">0:00</b><b class="positionPct">0%</b><b class="remain">-0:00</b></div>
+   <div class="beatgrid" title="Beatgrid"></div>
+   <div class="beatinfo"><span>Beatgrid</span><span class="beatNow">Beat 1</span></div>
+   <div class="hotcues" data-hot="B">
+    <button data-cue="0">CUE 1</button><button data-cue="1">CUE 2</button><button data-cue="2">CUE 3</button><button data-cue="3">CUE 4</button>
+   </div>
+   <div class="bpmBig bpmBigEl">128 BPM</div>
+   <div class="transport"><button class="play">▶ Play</button><button class="cue">⏮ Cue</button></div>
+   <div class="jogs"><div class="jogWrap"><div class="jog" data-jog="B"><div class="mark"></div></div><div class="jogHint">Drehen = Jog / Scratch</div></div><div><button class="cuehold" data-cuehold="B">🎧 CUE gedrückt halten</button></div></div>
+   <div class="controls4">
+    <div class="control"><label>BPM</label><input class="bpm" type="range" min="70" max="180" value="128"><div class="val bpmVal">128</div></div>
+    <div class="control"><label>Pitch %</label><input class="pitch" type="range" min="-10" max="10" step=".1" value="0"><div class="val pitchVal">0%</div></div>
+    <div class="control"><label>Gain</label><input class="gain" type="range" min="0" max="1.4" step=".01" value="1"><div class="val gainVal">100%</div></div>
+    <div class="control"><label>Volume</label><input class="volume" type="range" min="0" max="1" step=".01" value="1"><div class="val volumeVal">100%</div></div>
+   </div>
+   <div class="eq">
+    <div class="slider"><label>HIGH</label><input class="high" type="range" min="-12" max="12" value="0"><div class="val highVal">0 dB</div></div>
+    <div class="slider"><label>MID</label><input class="mid" type="range" min="-12" max="12" value="0"><div class="val midVal">0 dB</div></div>
+    <div class="slider"><label>LOW</label><input class="low" type="range" min="-12" max="12" value="0"><div class="val lowVal">0 dB</div></div>
+   </div>
+   <div class="looprow"><select class="loop"><option value="0">Loop AUS</option><option value="4">Loop 4 Beats</option><option value="8">Loop 8 Beats</option><option value="16">Loop 16 Beats</option></select><button class="loopSet">🔁 Loop setzen</button></div>
+  </div>
+ </div>
+</div>
+
+<div class="panel">
+ <h2>🎛️ MIXER</h2>
+ <div class="mixer">
+  <div class="fader"><b>CHANNEL A</b><input id="faderA" type="range" min="0" max="1" step=".01" value="1"><div class="val" id="faderAVal">100%</div></div>
+  <div class="cross"><b>CROSSFADER</b><input id="cross" type="range" min="0" max="1" step=".01" value=".5"><div class="val" id="crossText">A 50 / 50 B</div></div>
+  <div class="fader"><b>CHANNEL B</b><input id="faderB" type="range" min="0" max="1" step=".01" value="1"><div class="val" id="faderBVal">100%</div></div>
+ </div>
+ <div class="row" style="margin-top:10px"><button id="sync" class="primary">🔄 SYNC A → B</button><button id="tap">👆 TAP TEMPO</button><button id="reset">↻ Alles zurücksetzen</button></div>
+ <div class="masterSection">
+  <button id="masterLock" class="lock">🔒 BPM LOCK: AUS</button>
+  <button id="beatNudge">↔️ BEAT NUDGE</button>
+ </div>
+</div>
+
+<div class="panel">
+ <h2>✨ EFFEKTE</h2>
+ <div class="fxgrid">
+  <button class="fx on" data-fx="filter">Filter</button><button class="fx" data-fx="echo">Echo</button><button class="fx" data-fx="delay">Delay</button><button class="fx" data-fx="reverb">Reverb</button>
+ </div>
+ <div class="fxControls">
+  <div class="slider"><label>Effekt-Stärke Dry/Wet</label><input id="wet" type="range" min="0" max="1" step=".01" value="0"><div class="val" id="wetVal">0%</div></div>
+  <div class="slider"><label>Filter-Frequenz</label><input id="filterFreq" type="range" min="200" max="12000" value="8000"><div class="val" id="filterVal">8000 Hz</div></div>
+ </div>
+ <div class="notice" id="status">Audio bereit. Lade einen Track in Deck A oder B.</div>
+</div>
+</section>
+
+<section id="lessons" class="tab hidden">
+<div class="panel"><h2>🎓 18-Schritte-Lehrplan</h2><div id="lessonsList"></div></div>
+</section>
+
+<section id="hearing" class="tab hidden">
+<div class="panel"><h2>👂 Gehörtraining</h2><p class="muted">Tippe beim Downbeat. Das Training läuft 32 Schläge.</p><div class="row"><button id="beatStart" class="primary">▶ Start</button><button id="beatStop">■ Stop</button><button id="beatTap">👆 Beat treffen</button></div><h3 id="beatScore">0 / 8</h3><div id="beatMsg" class="notice">Bereit.</div></div>
+</section>
+
+<section id="exam" class="tab hidden">
+<div class="panel"><h2>🏆 DJ-Grundlagenprüfung</h2><div id="quiz"></div><button id="submitQuiz" class="primary">Prüfung auswerten</button><div id="quizResult" class="notice hidden"></div></div>
+</section>
+</div>
+
+<script>
+'use strict';
+let ctx=null,master=null,deckA=null,deckB=null,fxInput=null,fxWet=null,fxFilter=null,fxDelay=null,fxReverb=null,fxWetGain=null,fxDryGain=null,activeFx='filter';
+const statusEl=document.getElementById('status');
+const state=JSON.parse(localStorage.getItem('djaw_complete_v6')||'{"xp":0,"done":[]}');
+function save(){localStorage.setItem('djaw_complete_v6',JSON.stringify(state));renderStats()}
+function renderStats(){document.getElementById('xp').textContent=state.xp;document.getElementById('level').textContent=Math.floor(state.xp/100)+1;document.getElementById('done').textContent=state.done.length+'/18'}
+function ensureAudio(){
+ if(ctx) { if(ctx.state==='suspended') ctx.resume(); return; }
+ ctx=new (window.AudioContext||window.webkitAudioContext)();
+ master=ctx.createGain(); master.gain.value=.85; master.connect(ctx.destination);
+ fxInput=ctx.createGain(); fxDryGain=ctx.createGain(); fxWetGain=ctx.createGain();
+ fxFilter=ctx.createBiquadFilter(); fxFilter.type='lowpass'; fxFilter.frequency.value=8000; fxFilter.Q.value=.7;
+ fxDelay=ctx.createDelay(2); fxDelay.delayTime.value=.32;
+ fxReverb=ctx.createConvolver(); fxReverb.buffer=makeImpulse(1.6,2.2);
+ fxInput.connect(fxDryGain);fxDryGain.connect(master);
+ fxInput.connect(fxFilter);fxFilter.connect(fxWetGain);fxWetGain.connect(master);
+ fxWet.value=0; updateFx();
+}
+function makeImpulse(seconds,decay){let n=Math.floor(ctx.sampleRate*seconds),b=ctx.createBuffer(2,n,ctx.sampleRate);for(let c=0;c<2;c++){let d=b.getChannelData(c);for(let i=0;i<n;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/n,decay)}return b}
+function updateFx(){
+ if(!ctx)return;
+ const w=+document.getElementById('wet').value;
+ fxDryGain.gain.value=1-w;fxWetGain.gain.value=w;
+ fxFilter.frequency.value=+document.getElementById('filterFreq').value;
+ if(activeFx==='filter'){fxFilter.disconnect();fxFilter.connect(fxWetGain)}
+ else if(activeFx==='echo'){fxFilter.disconnect();fxFilter.connect(fxDelay);fxDelay.delayTime.value=.18;fxDelay.disconnect();fxDelay.connect(fxWetGain)}
+ else if(activeFx==='delay'){fxFilter.disconnect();fxFilter.connect(fxDelay);fxDelay.delayTime.value=.42;fxDelay.disconnect();fxDelay.connect(fxWetGain)}
+ else {fxFilter.disconnect();fxFilter.connect(fxReverb);fxReverb.disconnect();fxReverb.connect(fxWetGain)}
+}
+class Deck{
+ constructor(id){
+  this.id=id;this.root=document.querySelector('.deck[data-deck="'+id+'"]');this.name=this.root.querySelector('.name');this.status=this.root.querySelector('.status');this.canvas=this.root.querySelector('.wave');
+  this.audio=null;this.src=null;this.url=null;this.bpm=128;this.loop=0;this.loopStart=0;this.gainNode=null;this.channel=null;this.high=null;this.mid=null;this.low=null;this.an=null;this.rate=1;this.cues=[null,null,null,null];this.draw();this.clock();
+  this.bind();
+ }
+
+ clock(){
+  const tick=()=>{
+   const dur=this.audio?.duration||0, cur=this.audio?.currentTime||0;
+   const el=this.root.querySelector('.elapsed'), rem=this.root.querySelector('.remain'), pct=this.root.querySelector('.positionPct'), beat=this.root.querySelector('.beatNow');
+   el.textContent=this.formatTime(cur); rem.textContent='-'+this.formatTime(Math.max(0,dur-cur)); pct.textContent=(dur?Math.round(cur/dur*100):0)+'%';
+   const beatLen=60/Math.max(1,this.bpm), beatNo=dur?Math.floor(cur/beatLen)%4+1:1; beat.textContent='Beat '+beatNo;
+   requestAnimationFrame(tick);
+  }; tick();
+ }
+
+ bind(){
+  this.root.querySelector('.fileInput').addEventListener('change',e=>this.load(e.target.files[0]));
+  this.root.querySelector('.play').addEventListener('click',()=>this.play());
+  this.root.querySelector('.cue').addEventListener('click',()=>this.cue());
+  this.root.querySelector('.bpm').addEventListener('input',e=>{this.bpm=+e.target.value;this.root.querySelector('.bpmVal').textContent=this.bpm;this.root.querySelector('.bpmBigEl').textContent=this.bpm+' BPM';document.getElementById('masterBpm').textContent=this.bpm;});
+  this.root.querySelector('.pitch').addEventListener('input',e=>{this.rate=1+(+e.target.value/100);this.root.querySelector('.pitchVal').textContent=e.target.value+'%';if(this.audio)this.audio.playbackRate=this.rate});
+  this.root.querySelector('.gain').addEventListener('input',e=>{if(this.gainNode)this.gainNode.gain.value=+e.target.value;this.root.querySelector('.gainVal').textContent=Math.round(+e.target.value*100)+'%'});
+  this.root.querySelector('.volume').addEventListener('input',e=>{this.root.querySelector('.volumeVal').textContent=Math.round(+e.target.value*100)+'%';this.setChannel(+e.target.value)});
+  [['high','highVal'],['mid','midVal'],['low','lowVal']].forEach(([k,v])=>this.root.querySelector('.'+k).addEventListener('input',e=>{if(this[k])this[k].gain.value=+e.target.value;this.root.querySelector('.'+v).textContent=e.target.value+' dB'}));
+  this.root.querySelector('.loop').addEventListener('change',e=>this.loop=+e.target.value);
+  this.root.querySelector('.loopSet').addEventListener('click',()=>{if(this.audio){this.loopStart=this.audio.currentTime;this.status.textContent=this.loop?'Loop '+this.loop+' Beats ab '+this.formatTime(this.loopStart):'Loop aus.'}});
+  this.root.querySelectorAll('.hotcues button').forEach(btn=>btn.addEventListener('click',()=>{
+   if(!this.audio){this.status.textContent='Erst einen Track laden.';return}
+   const i=+btn.dataset.cue;
+   if(this.cues[i]===null){this.cues[i]=this.audio.currentTime;btn.classList.add('set');btn.textContent='CUE '+(i+1)+' ✓';this.status.textContent='Hot Cue '+(i+1)+' gesetzt.'}
+   else{this.audio.currentTime=this.cues[i];btn.classList.add('active');setTimeout(()=>btn.classList.remove('active'),180);this.status.textContent='Hot Cue '+(i+1)+' angesprungen.'}
+  }));
+
+ }
+ async load(file){
+  if(!file)return;ensureAudio();
+  if(this.url)URL.revokeObjectURL(this.url);
+  this.url=URL.createObjectURL(file);this.name.textContent=file.name;this.status.textContent='Datei wird geladen…';
+  this.audio=new Audio();this.audio.src=this.url;this.audio.preload='auto';this.audio.playsInline=true;
+  this.src=ctx.createMediaElementSource(this.audio);
+  this.gainNode=ctx.createGain();this.high=ctx.createBiquadFilter();this.mid=ctx.createBiquadFilter();this.low=ctx.createBiquadFilter();this.an=ctx.createAnalyser();
+  this.high.type='highshelf';this.high.frequency.value=5000;this.mid.type='peaking';this.mid.frequency.value=1000;this.mid.Q.value=.8;this.low.type='lowshelf';this.low.frequency.value=180;this.an.fftSize=512;
+  this.channel=ctx.createGain();this.channel.gain.value=1;
+  this.src.connect(this.gainNode);this.gainNode.connect(this.low);this.low.connect(this.mid);this.mid.connect(this.high);this.high.connect(this.channel);this.channel.connect(this.an);this.an.connect(fxInput);
+  this.audio.addEventListener('loadedmetadata',()=>{this.status.textContent='Geladen • '+this.formatTime(this.audio.duration)+' • BPM einstellen';},{once:true});
+  this.audio.addEventListener('playing',()=>{this.root.querySelector('.play').classList.add('running');this.root.querySelector('.play').textContent='⏸ Pause';});
+  this.audio.addEventListener('pause',()=>{this.root.querySelector('.play').classList.remove('running');this.root.querySelector('.play').textContent='▶ Play';});
+  this.audio.addEventListener('ended',()=>{this.root.querySelector('.play').classList.remove('running');});
+  this.audio.addEventListener('timeupdate',()=>this.checkLoop());
+  this.status.textContent='Track geladen: '+file.name;
+ }
+ setChannel(v){if(this.channel)this.channel.gain.value=v}
+ async play(){ensureAudio();if(!this.audio){this.status.textContent='Bitte zuerst einen Track laden.';return}try{await ctx.resume();if(this.audio.paused){await this.audio.play();this.status.textContent='Deck '+this.id+' läuft.'}else{this.audio.pause();this.status.textContent='Deck '+this.id+' pausiert.'}}catch(e){this.status.textContent='Play wurde von Safari blockiert. Noch einmal antippen.'}}
+ cue(){if(!this.audio)return;this.audio.pause();this.audio.currentTime=this.loopStart||0;this.status.textContent='Deck '+this.id+' Cue.'}
+ checkLoop(){if(this.audio&&this.loop>0){let beats=this.loop*(60/this.bpm);if(this.audio.currentTime>=this.loopStart+beats)this.audio.currentTime=this.loopStart}}
+ formatTime(s){if(!isFinite(s))return'0:00';return Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0')}
+ draw(){
+  const c=this.canvas,x=c.getContext('2d');const loop=()=>{x.clearRect(0,0,c.width,c.height);x.strokeStyle='#26304a';x.beginPath();x.moveTo(0,c.height/2);x.lineTo(c.width,c.height/2);x.stroke();if(this.an){let a=new Uint8Array(this.an.fftSize);this.an.getByteTimeDomainData(a);x.strokeStyle='#00e5ff';x.beginPath();for(let i=0;i<a.length;i++){let xx=i/a.length*c.width,yy=a[i]/255*c.height;i?x.lineTo(xx,yy):x.moveTo(xx,yy)}x.stroke()}requestAnimationFrame(loop)};loop()
+ }
+}
+function bindJog(id){
+ const wheel=document.querySelector('.jog[data-jog="'+id+'"]'),d=id==='A'?deckA:deckB;let down=false,lastX=0,was=false,angle=0;
+ wheel.addEventListener('pointerdown',e=>{if(!d.audio)return;ensureAudio();down=true;lastX=e.clientX;was=!d.audio.paused;d.audio.pause();wheel.setPointerCapture(e.pointerId);e.preventDefault()});
+ wheel.addEventListener('pointermove',e=>{if(!down||!d.audio)return;let dx=e.clientX-lastX;lastX=e.clientX;angle+=dx*1.7;wheel.style.transform='rotate('+angle+'deg)';d.audio.currentTime=Math.max(0,Math.min(d.audio.duration||1,d.audio.currentTime+dx*.012));e.preventDefault()});
+ const up=e=>{if(!down)return;down=false;try{wheel.releasePointerCapture(e.pointerId)}catch(_){}if(was)d.audio.play().catch(()=>{});};
+ wheel.addEventListener('pointerup',up);wheel.addEventListener('pointercancel',up);
+ const cb=document.querySelector('.cuehold[data-cuehold="'+id+'"]');
+ cb.addEventListener('pointerdown',e=>{if(!d.audio)return;ensureAudio();d.audio.pause();d.audio.currentTime=d.loopStart||0;cb.setPointerCapture(e.pointerId);d.status.textContent='CUE '+id;});
+ cb.addEventListener('pointerup',e=>{try{cb.releasePointerCapture(e.pointerId)}catch(_){}});
+}
+deckA=new Deck('A');deckB=new Deck('B');
+
+document.getElementById('faderA').addEventListener('input',e=>{document.getElementById('faderAVal').textContent=Math.round(+e.target.value*100)+'%';deckA.setChannel(+e.target.value);});
+document.getElementById('faderB').addEventListener('input',e=>{document.getElementById('faderBVal').textContent=Math.round(+e.target.value*100)+'%';deckB.setChannel(+e.target.value);});
+document.getElementById('cross').addEventListener('input',e=>{let v=+e.target.value;deckA.setChannel((1-v)*+document.getElementById('faderA').value);deckB.setChannel(v*+document.getElementById('faderB').value);document.getElementById('crossText').textContent='A '+Math.round((1-v)*100)+' / '+Math.round(v*100)+' B';});
+
+document.querySelectorAll('.fx').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.fx').forEach(x=>x.classList.remove('on'));b.classList.add('on');activeFx=b.dataset.fx;ensureAudio();updateFx();statusEl.textContent='Effekt: '+b.textContent}));
+document.getElementById('wet').addEventListener('input',e=>{document.getElementById('wetVal').textContent=Math.round(+e.target.value*100)+'%';ensureAudio();updateFx()});
+document.getElementById('filterFreq').addEventListener('input',e=>{document.getElementById('filterVal').textContent=e.target.value+' Hz';ensureAudio();updateFx()});
+document.getElementById('sync').addEventListener('click',()=>{deckB.bpm=deckA.bpm;let r=deckB.root; r.querySelector('.bpm').value=deckA.bpm;r.querySelector('.bpmVal').textContent=deckA.bpm;r.querySelector('.bpmBigEl').textContent=deckA.bpm+' BPM';if(deckB.audio)deckB.audio.playbackRate=deckB.rate;document.getElementById('masterBpm').textContent=deckA.bpm;statusEl.textContent='Deck B auf Deck A synchronisiert.'});
+let taps=[];document.getElementById('tap').addEventListener('click',()=>{let t=performance.now();taps=taps.filter(x=>t-x<3000);taps.push(t);if(taps.length>1){let avg=(taps.at(-1)-taps[0])/(taps.length-1),bpm=Math.max(70,Math.min(180,Math.round(60000/avg)));deckA.bpm=bpm;deckA.root.querySelector('.bpm').value=bpm;deckA.root.querySelector('.bpmVal').textContent=bpm;deckA.root.querySelector('.bpmBigEl').textContent=bpm+' BPM';document.getElementById('masterBpm').textContent=bpm;statusEl.textContent='Tap Tempo: '+bpm+' BPM'}});
+document.getElementById('reset').addEventListener('click',()=>location.reload());
+
+bindJog('A');bindJog('B');
+
+const lessonNames=['Browser & Audio','Track laden','Play/Pause','Cue','BPM verstehen','Pitch','Gain','HIGH EQ','MID EQ','LOW EQ','Channel Fader','Crossfader','Beatmatching','Sync','Loops 4/8/16','Filter & Effekte','Jog/Scratch','Sauberer Mix'];
+const lessonsList=document.getElementById('lessonsList');
+function renderLessons(){lessonsList.innerHTML=lessonNames.map((n,i)=>'<div class="lesson '+(state.done.includes(i)?'done':'')+'"><b>'+(i+1)+'. '+n+'</b><div class="progress" style="margin:7px 0"><i style="width:'+(state.done.includes(i)?100:0)+'%"></i></div><button onclick="completeLesson('+i+')">'+(state.done.includes(i)?'✓ Erledigt':'Als erledigt markieren')+'</button></div>').join('')}
+window.completeLesson=function(i){if(!state.done.includes(i)){state.done.push(i);state.xp+=25;save();renderLessons()}};
+renderLessons();
+
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.tab').forEach(x=>x.classList.add('hidden'));document.getElementById(b.dataset.tab).classList.remove('hidden');}));
+
+let beatTimer=null,beatOn=false,lastBeat=0,beatHits=0,beatCount=0;
+document.getElementById('beatStart').addEventListener('click',()=>{clearInterval(beatTimer);beatOn=true;beatHits=0;beatCount=0;document.getElementById('beatScore').textContent='0 / 8';let beat=()=>{lastBeat=performance.now();beatCount++;if(ctx){let o=ctx.createOscillator(),g=ctx.createGain();o.frequency.value=beatCount%4===1?140:90;g.gain.value=.18;o.connect(g);g.connect(master);o.start();o.stop(ctx.currentTime+.07)}};ensureAudio();beat();beatTimer=setInterval(beat,60000/128);});
+document.getElementById('beatStop').addEventListener('click',()=>{clearInterval(beatTimer);beatOn=false;document.getElementById('beatMsg').textContent='Gestoppt.'});
+document.getElementById('beatTap').addEventListener('click',()=>{if(!beatOn)return;let d=Math.abs(performance.now()-lastBeat);if(d<180&&beatHits<8){beatHits++;document.getElementById('beatScore').textContent=beatHits+' / 8';document.getElementById('beatMsg').textContent=d<70?'Perfekt!':'Gut!'}else document.getElementById('beatMsg').textContent='Etwas daneben.';if(beatHits>=8){clearInterval(beatTimer);beatOn=false;state.xp+=50;save();document.getElementById('beatMsg').textContent='🎉 Training geschafft! +50 XP.'}});
+
+const qs=[['Was macht der Crossfader?',['Er mischt A und B','Er verändert nur den BPM','Er lädt MP3'],0],['Was macht der Pitch-Regler?',['Tonhöhe/Tempo des Decks verändern','Nur die Lautstärke','Nur Reverb'],0],['Was bedeutet Cue?',['Vorhören/Startpunkt vorbereiten','Song löschen','BPM messen'],0],['Was ist EQ LOW?',['Tiefe Frequenzen','Mittlere Frequenzen','Hohe Frequenzen'],0],['Was macht Sync?',['BPM/Tempo angleichen','Datei speichern','Effekt löschen'],0],['Wofür ist ein Loop?',['Einen Abschnitt wiederholen','Track exportieren','Lautsprecher koppeln'],0],['Was macht Gain?',['Eingangspegel des Kanals','Nur Hall','Nur Crossfader'],0],['Was ist ein Jog Wheel?',['Steuerung für Position/Scratch','Ein Lautsprecher','Ein Dateiformat'],0]];
+document.getElementById('quiz').innerHTML=qs.map((q,i)=>'<div class="quiz"><b>'+(i+1)+'. '+q[0]+'</b>'+q[1].map((o,j)=>'<label><input type="radio" name="q'+i+'" value="'+j+'"> '+o+'</label>').join('')+'</div>').join('');
+document.getElementById('submitQuiz').addEventListener('click',()=>{let s=0;qs.forEach((q,i)=>{let a=document.querySelector('input[name=q'+i+']:checked');if(a&&+a.value===q[2])s++});let r=document.getElementById('quizResult');r.classList.remove('hidden');r.textContent='Ergebnis: '+s+'/8 ('+Math.round(s/8*100)+'%). '+(s>=7?'🎓 Prüfung bestanden! +100 XP.':'Noch nicht bestanden – weiter üben.');if(s>=7){state.xp+=100;save()}});
+
+
+// V7 professional controls
+let bpmLocked=false;
+document.getElementById('masterLock').addEventListener('click',()=>{
+ bpmLocked=!bpmLocked;
+ const b=document.getElementById('masterLock');
+ b.classList.toggle('on',bpmLocked);
+ b.textContent=bpmLocked?'🔒 BPM LOCK: AN':'🔒 BPM LOCK: AUS';
+ statusEl.textContent=bpmLocked?'BPM-Steuerung gesperrt.':'BPM-Steuerung freigegeben.';
+});
+document.getElementById('beatNudge').addEventListener('click',()=>{
+ [deckA,deckB].forEach(d=>{if(d.audio)d.audio.currentTime=Math.min(d.audio.duration||1,d.audio.currentTime+0.08)});
+ statusEl.textContent='Beat Nudge: +80 ms';
+});
+const originalBpmHandlers = [];
+[deckA,deckB].forEach(d=>{
+ const s=d.root.querySelector('.bpm');
+ s.addEventListener('input',e=>{
+  if(bpmLocked){e.preventDefault();e.target.value=d.bpm;return}
+ });
+});
+
+renderStats();
+</script>
+</body>
+</html>
